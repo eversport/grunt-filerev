@@ -101,6 +101,35 @@ module.exports = function (grunt) {
       next();
     }, this.async());
 
+    if (options.summaryFilePath) {
+      // modify filerev summary
+      var customSummary = {};
+
+      _.forEach(filerev.summary, function(value, key) {
+        var src;
+        var dest;
+        if (_.isObject(options.stripPath)){
+          if (options.stripPath.src) {
+            src = options.stripPath.src;
+          }
+          if (options.stripPath.dest) {
+            dest = options.stripPath.dest;
+          }
+        }
+        else {
+          src = options.stripPath;
+          dest = options.stripPath;
+        }
+        key = key.replace(src, '');
+        value = value.replace(dest, '');
+        customSummary[key] = value;
+      });
+
+      // write filerev summary into file
+      fs.writeFileSync(options.summaryFilePath, JSON.stringify(customSummary, null, 4));
+      grunt.log.writeln('Filerev summary was stored to ' + options.summaryFilePath);
+    }
+
     grunt.filerev = filerev;
   });
 };
