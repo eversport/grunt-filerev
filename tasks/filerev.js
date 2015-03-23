@@ -126,7 +126,7 @@ module.exports = function (grunt) {
             src = options.stripPath;
             dest = options.stripPath;
           }
-          
+
           var value = filerev.summary[key];
           value = value.replace(dest, '');
           key = key.replace(src, '');
