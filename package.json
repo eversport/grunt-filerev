@@ -1,5 +1,5 @@
 {
-  "name": "grunt-filerev",
+  "name": "@eversports/grunt-filerev",
   "version": "2.2.0",
   "description": "Asset revisioning by using file content hashing",
   "keywords": [
@@ -15,7 +15,14 @@
     "email": "frederick.ros@gmail.com",
     "url": "https://github.com/sleeper"
   },
-  "repository": "yeoman/grunt-filerev",
+  "contributors": [
+    {
+      "name": "Emanuel Steininger",
+      "email": "emanuel.steininger@eversports.com",
+      "url": "https://www.eversports.com"
+    }
+  ],
+  "repository": "eversports/grunt-filerev",
   "scripts": {
     "test": "grunt"
   },
