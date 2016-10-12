@@ -1,6 +1,6 @@
 {
   "name": "@eversports/grunt-filerev",
-  "version": "2.2.0",
+  "version": "0.0.1",
   "description": "Asset revisioning by using file content hashing",
   "keywords": [
     "gruntplugin",
